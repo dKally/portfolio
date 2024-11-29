@@ -39,9 +39,15 @@ window.addEventListener("load", function () {
   }
 });
 
+let resizeTimeout;
 window.addEventListener("resize", function () {
-  window.location.hash = currentSection;
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => {
+    window.location.hash = currentSection;
+  }, 300);
 });
+
+window.addEventListener("resize", function () {});
 
 // console.log(currentSectionNumber)
 
@@ -141,6 +147,31 @@ window.addEventListener("scroll", function () {
   } else {
     toggleUpSection();
     // console.log('Scroll para cima');
+  }
+});
+
+window.addEventListener("touchstart", function (event) {
+  startY = event.touches[0].clientY;
+});
+
+window.addEventListener("touchend", function (event) {
+  endY = event.changedTouches[0].clientY;
+
+  if (scrolled) return;
+
+  const swipeDistance = startY - endY;
+  if (Math.abs(swipeDistance) > 50) {
+    scrolled = true;
+
+    if (swipeDistance > 0) {
+      toggleDownSection();
+    } else {
+      toggleUpSection();
+    }
+
+    setTimeout(() => {
+      scrolled = false;
+    }, 700);
   }
 });
 
