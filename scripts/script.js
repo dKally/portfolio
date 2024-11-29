@@ -139,7 +139,7 @@ window.addEventListener("scroll", function () {
   setTimeout(() => {
     scrolled = false;
     body.classList.remove("overflow-hidden");
-  }, 700);
+  }, 1000);
 
   if (currentScroll > lastScrollTop) {
     toggleDownSection();
@@ -171,7 +171,7 @@ window.addEventListener("touchend", function (event) {
 
     setTimeout(() => {
       scrolled = false;
-    }, 700);
+    }, 1000);
   }
 });
 
