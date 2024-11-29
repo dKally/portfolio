@@ -984,7 +984,7 @@ html {
 @media screen and (max-width: 1150px) {
   .projects {
     max-width: 38%;
-    width: 38;
+    width: 38%;
     padding: 20px;
   }
   .scroll-btn-div {
@@ -1140,6 +1140,10 @@ html {
 @media screen and (max-width: 580px) {
   .projects {
     padding: 5px;
+
+    max-width: 50%;
+    width: 50%;
+    border-radius: 10px;
   }
 
   .title-div {

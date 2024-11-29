@@ -1,3 +1,5 @@
+console.log("0.0.1");
+
 const scrollBtn1 = document.querySelector("#scroll-btn-1");
 const scrollBtn2 = document.querySelector("#scroll-btn-2");
 const scrollBtn3 = document.querySelector("#scroll-btn-3");
@@ -18,6 +20,8 @@ let section2HasShowed = false;
 let lastScrollTop = 0;
 
 let scrolled = false;
+let scrolledMobile = false;
+let scrolledDesktop = false;
 
 window.addEventListener("load", function () {
   window.location.hash = "#section-1";
@@ -65,7 +69,7 @@ function toggleSection(number) {
   setTimeout(() => {
     scrolled = false;
     body.classList.remove("overflow-hidden");
-  }, 800);
+  }, 1100);
 
   switch (number) {
     case 1:
@@ -106,7 +110,7 @@ function toggleDownSection() {
 }
 
 function toggleUpSection() {
-  console.log(currentSectionNumber);
+  // console.log(currentSectionNumber);
   switch (currentSectionNumber) {
     case 2:
       toggleToSection1();
@@ -123,6 +127,9 @@ function toggleUpSection() {
 }
 
 window.addEventListener("scroll", function () {
+  if (scrolledMobile) {
+    return;
+  }
   let currentScroll = window.scrollY || document.documentElement.scrollTop;
 
   //    console.log('current scroll: ' + currentScroll)
@@ -152,6 +159,7 @@ window.addEventListener("scroll", function () {
 
 window.addEventListener("touchstart", function (event) {
   startY = event.touches[0].clientY;
+  scrolledMobile = true;
 });
 
 window.addEventListener("touchend", function (event) {
