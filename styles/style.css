@@ -60,6 +60,7 @@ html {
   gap: 10px;
   color: #fff;
   font-size: 2rem;
+  overflow: hidden;
 }
 
 .box-1 {
@@ -471,6 +472,7 @@ html {
   justify-content: center;
   align-items: center;
   position: relative;
+  overflow: hidden;
 }
 
 .projects {
@@ -687,6 +689,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .about-me {
@@ -708,11 +711,6 @@ html {
   letter-spacing: 7px;
   font-weight: 700;
   margin-bottom: 50px;
-}
-
-.title-about-me-span {
-  color: #afafaf;
-  margin-bottom: 30px;
 }
 
 .description-about-me {
@@ -751,6 +749,7 @@ html {
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .hide {
@@ -829,52 +828,6 @@ html {
   margin-top: 20px;
 }
 
-@media screen and (max-height: 1000px) {
-  /* .projects {
-    max-width: 30%;
-  }
-
-  .arrow-right {
-    right: 4%;
-  }
-
-  .arrow-left {
-    left: 4%;
-  }
-  .title-div img {
-    width: 50px;
-    border-radius: 15%;
-  }
-
-  .title-project {
-    font-size: 2rem !important;
-  } */
-
-  /* .title-about-me {
-    font-size: 1.8rem !important;
-  }
-
-  .title-about-me {
-    font-size: 1.6rem !important;
-    margin-bottom: 22px !important;
-  }
-
-  .description-about-me {
-    max-width: 96% !important;
-    font-size: 0.9rem !important;
-  }
-
-  .linkToTools {
-    font-size: 0.9rem !important;
-    padding-top: 15px !important;
-    padding-bottom: 7px !important;
-  }
-
-  .linkToCert {
-    font-size: 0.9rem !important;
-  } */
-}
-
 @media screen and (max-width: 1800px) {
   .projects {
     max-width: 38%;
@@ -939,10 +892,6 @@ html {
     max-width: 90%;
   }
 
-  .title-cert {
-    font-size: 3.5rem;
-  }
-
   .cert a {
     font-size: 1.4rem;
     height: 230px;
@@ -953,31 +902,6 @@ html {
   .cert i {
     font-size: 5rem;
     margin-top: 15px;
-  }
-}
-
-@media screen and (max-width: 950px) {
-  .about-me {
-    width: 100vw;
-    height: 100vh;
-    border-radius: 0;
-  }
-
-  .cert {
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 40px !important;
-  }
-
-  .cert a {
-    font-size: 1rem;
-    height: 170px !important;
-    width: 170px !important;
-    border-radius: 25px !important;
-  }
-
-  .cert i {
-    font-size: 3.5rem !important;
-    margin-top: 8px !important;
   }
 }
 
@@ -1097,16 +1021,51 @@ html {
   }
 }
 
-@media screen and (max-width: 650px) {
-  .title span {
+@media screen and (max-width: 950px) {
+  .about-me {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .cert {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+
+  .cert a {
+    font-size: 0.7rem;
+    height: 100px;
+    width: 100px;
+    border-radius: 25px;
+  }
+
+  .cert i {
+    font-size: 2rem;
+    margin-top: 6px;
+  }
+
+  .title-cert {
     font-size: 2rem;
   }
 
+  .icon_ {
+    font-size: 20px !important;
+    width: 30px !important;
+    height: 30px !important;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .title span {
+    font-size: 1.4rem;
+  }
+
   #section-1 {
-    font-size: 1.2rem;
+    font-size: 0.8rem;
   }
   .title-skills span {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 
   .skills {
@@ -1134,6 +1093,15 @@ html {
 
   .title-technologies {
     font-size: 0.5rem;
+  }
+  .title-about-me {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+  }
+  .title-cert {
+    font-size: 1.5rem;
+    letter-spacing: 4px;
   }
 }
 
@@ -1168,5 +1136,10 @@ html {
 
   .linkToCert {
     font-size: 0.6rem;
+  }
+  .title-about-me {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    letter-spacing: 4px;
   }
 }

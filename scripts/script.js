@@ -21,7 +21,6 @@ let lastScrollTop = 0;
 
 let scrolled = false;
 let scrolledMobile = false;
-let scrolledDesktop = false;
 
 window.addEventListener("load", function () {
   window.location.hash = "#section-1";
@@ -59,17 +58,19 @@ function toggleSection(number) {
   if (number == currentSectionNumber) {
     return;
   }
-  if (scrolled) {
+  if (scrolled && scrolledMobile === false) {
     return;
   }
 
   scrolled = true;
-  body.classList.add("overflow-hidden");
+  if (!scrolledMobile) {
+    body.classList.add("overflow-hidden");
 
-  setTimeout(() => {
-    scrolled = false;
-    body.classList.remove("overflow-hidden");
-  }, 1100);
+    setTimeout(() => {
+      scrolled = false;
+      body.classList.remove("overflow-hidden");
+    }, 1100);
+  }
 
   switch (number) {
     case 1:
@@ -165,11 +166,11 @@ window.addEventListener("touchstart", function (event) {
 window.addEventListener("touchend", function (event) {
   endY = event.changedTouches[0].clientY;
 
-  if (scrolled) return;
+  // if (scrolled) return;
 
   const swipeDistance = startY - endY;
-  if (Math.abs(swipeDistance) > 50) {
-    scrolled = true;
+  if (Math.abs(swipeDistance) >= 1) {
+    // scrolled = true;
 
     if (swipeDistance > 0) {
       toggleDownSection();
@@ -177,9 +178,9 @@ window.addEventListener("touchend", function (event) {
       toggleUpSection();
     }
 
-    setTimeout(() => {
-      scrolled = false;
-    }, 1000);
+    // setTimeout(() => {
+    //   scrolled = false;
+    // }, 1000);
   }
 });
 
