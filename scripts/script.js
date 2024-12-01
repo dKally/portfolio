@@ -1,5 +1,3 @@
-console.log("0.0.1");
-
 const scrollBtn1 = document.querySelector("#scroll-btn-1");
 const scrollBtn2 = document.querySelector("#scroll-btn-2");
 const scrollBtn3 = document.querySelector("#scroll-btn-3");
@@ -41,6 +39,14 @@ window.addEventListener("load", function () {
     // do nothing
   }
 });
+
+window.addEventListener(
+  "touchmove",
+  function (event) {
+    event.preventDefault();
+  },
+  { passive: false }
+);
 
 let resizeTimeout;
 window.addEventListener("resize", function () {
